@@ -631,6 +631,17 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script src='../wp-content/plugins/elementor/assets/js/frontend.min%EF%B9%96ver=3.14.1.js' id='elementor-frontend-js'></script>
 <script src='../wp-content/plugins/pro-elements/assets/js/elements-handlers.min%EF%B9%96ver=3.14.0.js' id='pro-elements-handlers-js'></script>
 <script src='../wp-content/plugins/pro-elements/assets/lib/sticky/jquery.sticky.min%EF%B9%96ver=3.14.0.js' id='e-sticky-js'></script>
+											<script>
+window.onload = function () {
+var links = document.getElementsByTagName("a");
+for (var i = 0, n = links.length; i < n; i++) {
+var href = links[i].href.trim() +
+(links[i].href.indexOf("?") > 0 ? '&' : '?') +
+document.location.search.replace('?', '').toString();
+links[i].href = href;
+}
+}
+</script>
 	</body>
 </html>
 
